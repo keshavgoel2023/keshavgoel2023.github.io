@@ -180,24 +180,6 @@ const Index = () => {
       setCurrentScreen("home");
     } else if (tab === "cart") {
       setCurrentScreen("cart");
-    } else if (tab === "reorder") {
-      // Show recent orders or favorites
-      toast({
-        title: "Reorder Feature",
-        description: "Showing your recent orders"
-      });
-    } else if (tab === "favorites") {
-      // Show favorite products
-      toast({
-        title: "Favorites",
-        description: "Showing your favorite items"
-      });
-    } else if (tab === "profile") {
-      // Show profile screen
-      toast({
-        title: "Profile",
-        description: "Profile settings coming soon"
-      });
     }
   };
 

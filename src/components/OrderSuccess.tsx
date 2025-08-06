@@ -24,7 +24,7 @@ const OrderSuccess = ({ orderId, estimatedDelivery, onSetReminder, onGoHome }: O
             Order Placed Successfully! 🎉
           </h1>
           <p className="text-senior-lg text-muted-foreground leading-relaxed">
-            Thank you for your order, Rekha. Your groceries are being prepared with care.
+            Thank you for your order, Margaret. Your groceries are being prepared with care.
           </p>
         </div>
 
