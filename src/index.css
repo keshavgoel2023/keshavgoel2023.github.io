@@ -2,39 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Senior-friendly grocery delivery app design system
+All colors MUST be HSL for accessibility and high contrast
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* High contrast, calming background colors */
+    --background: 210 20% 98%;
+    --foreground: 220 15% 15%;
 
+    /* Card styling with subtle borders */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
+    /* Popover elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand - calming green for trust and nature */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 142 76% 32%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - soft blue for secondary actions */
+    --secondary: 210 45% 94%;
+    --secondary-foreground: 220 15% 15%;
+    --secondary-hover: 210 45% 88%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted elements - high contrast but subtle */
+    --muted: 210 25% 92%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - warm orange for highlights and CTAs */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 25 95% 48%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success state - reassuring green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning state - clear orange */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive state - clear but not aggressive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Form elements with high contrast */
+    --border: 214 20% 85%;
+    --input: 0 0% 100%;
+    --input-border: 214 20% 75%;
+    --ring: 142 76% 36%;
 
     --radius: 0.5rem;
 
@@ -100,6 +121,79 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Senior-friendly typography and accessibility */
+  .text-senior-lg {
+    @apply text-2xl leading-relaxed;
+  }
+
+  .text-senior-xl {
+    @apply text-3xl leading-relaxed font-semibold;
+  }
+
+  .text-senior-2xl {
+    @apply text-4xl leading-relaxed font-bold;
+  }
+
+  /* Touch-friendly buttons and interactive elements */
+  .touch-target {
+    min-height: 56px;
+    min-width: 56px;
+  }
+
+  .button-senior {
+    @apply touch-target px-8 py-4 text-senior-lg font-semibold rounded-xl transition-all duration-200;
+  }
+
+  .button-primary {
+    @apply button-senior bg-primary text-primary-foreground hover:opacity-90 active:scale-95;
+  }
+
+  .button-secondary {
+    @apply button-senior bg-secondary text-secondary-foreground border-2 border-border hover:bg-secondary-hover;
+  }
+
+  .button-accent {
+    @apply button-senior bg-accent text-accent-foreground hover:opacity-90 active:scale-95;
+  }
+
+  /* High contrast focus states for accessibility */
+  .focus-senior {
+    @apply focus:outline-none focus:ring-4 focus:ring-ring focus:ring-opacity-75;
+  }
+
+  /* Card styling with generous spacing */
+  .card-senior {
+    @apply bg-card border-2 border-border rounded-2xl p-6 shadow-lg;
+  }
+
+  /* Voice feedback animations */
+  @keyframes pulse-gentle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-pulse-gentle {
+    animation: pulse-gentle 2s ease-in-out infinite;
+  }
+
+  /* High contrast scrollbars for better visibility */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground));
   }
 }
