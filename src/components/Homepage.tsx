@@ -45,14 +45,14 @@ const Homepage = ({ onCategorySelect, onVoiceSearch }: HomepageProps) => {
       <div className="bg-card shadow-lg">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-senior-2xl text-foreground">
-                Good morning, Margaret!
-              </h1>
-              <p className="text-senior-lg text-muted-foreground mt-2">
-                Ready for your weekly grocery shopping?
-              </p>
-            </div>
+          <div>
+            <h1 className="text-senior-2xl text-foreground">
+              Good morning, Rekha!
+            </h1>
+            <p className="text-senior-lg text-muted-foreground mt-2">
+              Ready for your weekly grocery shopping?
+            </p>
+          </div>
             <button className="touch-target p-3 rounded-xl bg-accent text-accent-foreground focus-senior">
               <Bell className="w-6 h-6" />
             </button>
