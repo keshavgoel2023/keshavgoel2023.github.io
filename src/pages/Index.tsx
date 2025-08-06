@@ -180,6 +180,27 @@ const Index = () => {
       setCurrentScreen("home");
     } else if (tab === "cart") {
       setCurrentScreen("cart");
+    } else if (tab === "reorder") {
+      // Handle reorder tab - could show recent orders or navigate to a reorder screen
+      setCurrentScreen("home"); // For now, go to home
+      toast({
+        title: "Reorder Feature",
+        description: "Showing your recent orders"
+      });
+    } else if (tab === "favorites") {
+      // Handle favorites tab - could show favorite products
+      setCurrentScreen("home"); // For now, go to home
+      toast({
+        title: "Favorites",
+        description: "Showing your favorite items"
+      });
+    } else if (tab === "profile") {
+      // Handle profile tab - could show user profile
+      setCurrentScreen("home"); // For now, go to home
+      toast({
+        title: "Profile",
+        description: "User profile section"
+      });
     }
   };
 

@@ -47,7 +47,7 @@ const Homepage = ({ onCategorySelect, onVoiceSearch }: HomepageProps) => {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="text-senior-2xl text-foreground">
-                Good morning, Margaret!
+                Good morning, Rekha!
               </h1>
               <p className="text-senior-lg text-muted-foreground mt-2">
                 Ready for your weekly grocery shopping?
